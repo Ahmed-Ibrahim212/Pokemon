@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">PokemonApi</string>
+    <string name="weight">Weight</string>
+    <string name="Height">Height</string>
+    <string name="type">type</string>
+    <string name="prev_evolution">prev_evolution</string>
+    <string name="next_evolution">next_evolution</string>
+    <string name="pikachu">pikachu</string>
+    <string name="setLimit">set limit</string>
+    <string name="list_title">list title</string>
+    <string name="moves">Moves</string>
+    <string name="height">Height</string>
+    <string name="upload">upload</string>
+    <string name="tap_to_select_image">tap to select image</string>
+</resources>
