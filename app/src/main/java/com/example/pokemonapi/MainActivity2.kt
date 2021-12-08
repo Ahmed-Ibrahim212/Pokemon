@@ -29,9 +29,9 @@ import java.io.File
 import java.io.FileInputStream
 import java.io.FileOutputStream
 
+
 class MainActivity2 : AppCompatActivity(), UploadRequestBody.UploadCallback {
     private var selectedImage: Uri? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
