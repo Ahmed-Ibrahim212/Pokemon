@@ -17,8 +17,6 @@ import com.example.pokemonapi.R
 import com.example.pokemonapi.UploadApi.ImageUploadAPI
 import com.example.pokemonapi.UploadApi.UploadRequestBody
 import com.example.pokemonapi.UploadApi.UploadResponse
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import okhttp3.MediaType
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
@@ -30,15 +28,15 @@ import java.io.FileInputStream
 import java.io.FileOutputStream
 
 
-class MainActivity2 : AppCompatActivity(), UploadRequestBody.UploadCallback {
+class UploadImageActivity : AppCompatActivity(), UploadRequestBody.UploadCallback {
     private var selectedImage: Uri? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_uploadimage)
 
 
         //checking for permission
-        findViewById<ImageView>(R.id.imageView).setOnClickListener {
+        findViewById<ImageView>(R.id.imageVieww).setOnClickListener {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
                 requestPermissions(arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE), 100)
             } else {
@@ -88,7 +86,7 @@ class MainActivity2 : AppCompatActivity(), UploadRequestBody.UploadCallback {
                 call: Call<UploadResponse>,
                 response: Response<UploadResponse>
             ) {
-                findViewById<ProgressBar>(R.id.progressBar).progress = 100
+                findViewById<ProgressBar>(R.id.progressBar).progress = 0
                 findViewById<ConstraintLayout>(R.id.layout_root).snackbar(response.body()?.message.toString())
             }
 
@@ -115,7 +113,7 @@ class MainActivity2 : AppCompatActivity(), UploadRequestBody.UploadCallback {
             when (requestCode) {
                 REQUEST_CODE_IMAGE_PICKER -> {
                     selectedImage = data?.data
-                    findViewById<ImageView>(R.id.imageView).setImageURI(selectedImage)
+                    findViewById<ImageView>(R.id.imageVieww).setImageURI(selectedImage)
                 }
             }
         }

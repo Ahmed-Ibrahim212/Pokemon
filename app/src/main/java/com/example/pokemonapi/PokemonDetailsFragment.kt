@@ -45,6 +45,7 @@ class PokemonDetailsFragment: Fragment() {
             viewLifecycleOwner,
             androidx.lifecycle.Observer {
                 with(binding) {
+                    name.text = "${it.species.name}"
                     height.text = "${it.height} cm"
                     weight.text = "${it.weight} lbs"
                     baseExperience.text = "${it.base_experience}"
