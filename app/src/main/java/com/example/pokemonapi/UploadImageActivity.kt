@@ -86,8 +86,8 @@ class UploadImageActivity : AppCompatActivity(), UploadRequestBody.UploadCallbac
                 call: Call<UploadResponse>,
                 response: Response<UploadResponse>
             ) {
-                findViewById<ProgressBar>(R.id.progressBar).progress = 0
-                findViewById<ConstraintLayout>(R.id.layout_root).snackbar(response.body()?.message.toString())
+                findViewById<ProgressBar>(R.id.progressBar).progress = 100
+                findViewById<ConstraintLayout>(R.id.layout_root).snackbar("Uploaded Successfully")
             }
 
             override fun onFailure(call: Call<UploadResponse>, t: Throwable) {

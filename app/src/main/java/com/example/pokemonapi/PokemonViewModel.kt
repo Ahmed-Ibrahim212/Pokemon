@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
 class PokemonViewModel: ViewModel() {
@@ -14,7 +15,10 @@ class PokemonViewModel: ViewModel() {
     get() = _pokemonData
 
     fun getPokemon(limit: Int, offset: Int){
+
+
         viewModelScope.launch {
+
             try {
                 val listResult = RetrofitClient.retrofitService.getPokemon(limit, offset)
 

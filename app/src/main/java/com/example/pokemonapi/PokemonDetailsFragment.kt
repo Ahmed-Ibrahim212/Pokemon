@@ -9,9 +9,8 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
 import com.example.pokemonapi.databinding.FragmentPokemonDetailsBinding
 import com.squareup.picasso.Picasso
-import java.util.Observer
 
-class PokemonDetailsFragment: Fragment() {
+class PokemonDetailsFragment : Fragment() {
     private var _binding: FragmentPokemonDetailsBinding? = null
     private val binding get() = _binding!!
     private val args: PokemonDetailsFragmentArgs by navArgs()
@@ -27,25 +26,26 @@ class PokemonDetailsFragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val string = args.number
-        val URL = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"
+        val pokemonId = args.number
+
 
         // Download and transform Pokemon images
         Picasso.get()
-            .load("${URL}$string.png")
+            .load("${Constants.POKEMON_URL}$pokemonId.png")
             .into(binding.pokemonImg)
-        val viewModel = ViewModelProvider(this).get(PokemonDetailsViewModel::class.java)
+
+        val pokemonDetailsViewModel =
+            ViewModelProvider(this).get(PokemonDetailsViewModel::class.java)
 
         // get pokemon details
-        viewModel.getPokemonIndividualDetails(string!!)
+        pokemonDetailsViewModel.getPokemonIndividualDetails(pokemonId)
         /**
          * Observes obtained pokemon details
          */
-        viewModel.getPokemonIndividualDataDetails().observe(
-            viewLifecycleOwner,
-            androidx.lifecycle.Observer {
+        pokemonDetailsViewModel.getPokemonIndividualDataDetails().observe(
+            viewLifecycleOwner, {
                 with(binding) {
-                    name.text = "${it.species.name}"
+                    name.text = it.species.name
                     height.text = "${it.height} cm"
                     weight.text = "${it.weight} lbs"
                     baseExperience.text = "${it.base_experience}"
@@ -57,16 +57,6 @@ class PokemonDetailsFragment: Fragment() {
             }
         )
     }
-}
 
-//        Observer {
-//                binding.text = it.species.name.capitalize(Locale.ROOT)
-//                textViewID.text = "#${it.stats[0].base_stat}"
-//                textViewHeight.text = "${it.height} cm"
-//                textViewWeight.text = "${it.weight} kg"
-//                textViewOrder.text = it.order
-//                textViewBaseEXP.text = it.base_experience
-//
-//                textViewMove1.text = it.moves[0].move.name
-//                textViewMove2.text = it.moves[1].move.name
-//            }
+
+}

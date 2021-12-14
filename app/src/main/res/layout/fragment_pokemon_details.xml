@@ -35,6 +35,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/pikachu"
+                    android:textColor="@color/black"
                     android:fontFamily="@font/adamina"
                     android:textSize="30sp"
                     android:textStyle="bold" />
@@ -45,6 +46,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:text="@string/height"
+                    android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
@@ -53,6 +55,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
+                    android:textColor="@color/white"
+                    android:background="@color/purple_200"
                     android:text="20cm"
                     android:textSize="16sp" />
 
@@ -63,6 +67,7 @@
                     android:layout_marginBottom="10dp"
                     android:text="@string/weight"
                     android:textSize="20sp"
+                    android:textColor="@color/black"
                     android:textStyle="bold" />
 
                 <TextView
@@ -70,6 +75,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
+                    android:background="@color/purple_200"
+                    android:textColor="@color/white"
                     android:text="40lbs"
                     android:textSize="16sp" />
 
@@ -78,6 +85,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
+                    android:textColor="@color/black"
                     android:text="Training"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -87,21 +95,24 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:text="Base Experience"
+                    android:background="@color/purple_200"
+                    android:textColor="@color/white"
                     android:textSize="16sp" />
                 <TextView
                     android:id="@+id/order"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
+                    android:background="@color/purple_200"
+                    android:textColor="@color/white"
                     android:text="Order"
                     android:textSize="16sp" />
-
-
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
+                    android:textColor="@color/black"
                     android:text="@string/moves"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -110,6 +121,8 @@
                     android:id="@+id/move1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:background="@color/purple_200"
+                    android:textColor="@color/white"
                     android:layout_marginBottom="10dp"
                     android:text="@string/moves"
                     android:textSize="16sp" />
@@ -119,6 +132,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
+                    android:background="@color/purple_200"
+                    android:textColor="@color/white"
                     android:text="@string/moves"
                     android:textSize="16sp" />
                 <TextView
@@ -126,6 +141,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
+                    android:background="@color/purple_200"
+                    android:textColor="@color/white"
                     android:text="@string/moves"
                     android:textSize="16sp" />
 
@@ -138,7 +155,7 @@
             android:layout_height="150dp"
             android:layout_alignTop="@+id/cardView2"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="-50dp"
+            android:layout_marginTop="-60dp"
             android:background="@color/teal_200"
             android:backgroundTint="@color/purple_200" />
 

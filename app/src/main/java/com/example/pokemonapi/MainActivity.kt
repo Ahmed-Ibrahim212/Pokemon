@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.myuploadingapp.UploadImageActivity
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-//import com.example.myuploadingapp.MainActivity2
+
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

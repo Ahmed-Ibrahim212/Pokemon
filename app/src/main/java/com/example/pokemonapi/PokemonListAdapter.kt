@@ -11,7 +11,7 @@ import com.squareup.picasso.Picasso
 
 class PokemonListAdapter(
     private val pokemons: List<ResultsData>,
-    var listener: PokemonListFragment
+    var listener: OnPokemonListClick
 ) : RecyclerView.Adapter<PokemonListAdapter.MyViewHolder>() {
 
 

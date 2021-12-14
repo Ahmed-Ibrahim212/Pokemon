@@ -9,19 +9,25 @@ import kotlinx.coroutines.launch
 
 
 class PokemonDetailsViewModel() : ViewModel() {
-    private var pokemonIndividualData = MutableLiveData<Pokemon>()
+    private var _pokemonIndividualData = MutableLiveData<Pokemon>()
+
+    var pokemonIndividualData: LiveData<Pokemon> = _pokemonIndividualData
+
     fun getPokemonIndividualDataDetails(): LiveData<Pokemon> {
-        return pokemonIndividualData
+        return _pokemonIndividualData
     }
+
     /**
      * Use kotlin coroutine to make network call and get json results of each pokemon
      */
-    fun getPokemonIndividualDetails(id:String){
+    fun getPokemonIndividualDetails(pokemonId: String) {
+
         viewModelScope.launch {
             try {
-                val pokemonIndividualResults = RetrofitClient.retrofitService.getPokemonDetails(id)
-                pokemonIndividualData.value = pokemonIndividualResults
-            } catch (e: Exception){
+                val pokemonIndividualResults =
+                    RetrofitClient.retrofitService.getPokemonDetails(pokemonId)
+                _pokemonIndividualData.value = pokemonIndividualResults
+            } catch (e: Exception) {
                 Log.d("FAILUREDETAILS", "$e")
             }
         }
