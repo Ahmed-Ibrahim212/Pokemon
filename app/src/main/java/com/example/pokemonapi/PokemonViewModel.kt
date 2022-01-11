@@ -16,9 +16,7 @@ class PokemonViewModel: ViewModel() {
 
     fun getPokemon(limit: Int, offset: Int){
 
-
         viewModelScope.launch {
-
             try {
                 val listResult = RetrofitClient.retrofitService.getPokemon(limit, offset)
 

@@ -38,26 +38,27 @@ class PokemonListFragment: Fragment(), OnPokemonListClick {
         val recyclerPokemon = binding.PokemonRecyclerView
 
         binding.buttonSetLimit.setOnClickListener {
-            if (binding.getPokeLimit.text.isNotEmpty()){
+            if (binding.getPokeLimit.text.isNotEmpty()) {
                 val limit = binding.getPokeLimit.text.toString().toInt()
                 viewModel.getPokemon(limit, 0)
-        //To hide the on-screen keyboard after button click
-        binding.getPokeLimit.onEditorAction(EditorInfo.IME_ACTION_DONE)
-            }else{
+                //To hide the on-screen keyboard after button click
+                binding.getPokeLimit.onEditorAction(EditorInfo.IME_ACTION_DONE)
+            } else {
                 binding.getPokeLimit.error = "Invalid Input"
             }
         }
-        viewModel.getPokemon(100, 0)
+            viewModel.getPokemon(100, 0)
 
-        recyclerPokemon.layoutManager= GridLayoutManager(requireContext(),2)
-        viewModel.pokemonData.observe(
-            viewLifecycleOwner,
-            Observer {
-                recyclerPokemon.adapter = PokemonListAdapter(it.results, this)
+            recyclerPokemon.layoutManager = GridLayoutManager(requireContext(), 2)
+            viewModel.pokemonData.observe(
+                viewLifecycleOwner,
+                Observer {
+                    recyclerPokemon.adapter = PokemonListAdapter(it.results, this)
 
-            }
-        )
-    }
+                }
+            )
+        }
+
 
     override fun onItemCLick(item: ResultsData, position: Int) {
         val num = getNumber(item.url)

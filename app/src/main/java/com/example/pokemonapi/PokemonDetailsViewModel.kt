@@ -28,7 +28,7 @@ class PokemonDetailsViewModel() : ViewModel() {
                     RetrofitClient.retrofitService.getPokemonDetails(pokemonId)
                 _pokemonIndividualData.value = pokemonIndividualResults
             } catch (e: Exception) {
-                Log.d("FAILUREDETAILS", "$e")
+                Log.d("FAILURE DETAILS", "$e")
             }
         }
     }
